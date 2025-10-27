@@ -1,0 +1,34 @@
+LOGO PLACEMENT INSTRUCTIONS
+============================
+
+Please place your Community Reform CIC logo in this directory with the filename:
+
+    logo.png
+
+Logo Requirements:
+------------------
+- Format: PNG with transparent background (preferred) or JPG/WebP
+- Recommended size: 300x300px (or similar proportions)
+- File size: Under 200KB (optimized for web)
+- Orientation: Square or wide horizontal format works best
+
+The logo will be used in the following places:
+1. Main navigation bar (60px height)
+2. Footer (80px height)
+3. Admin login page (80px height)
+
+If your logo has different proportions or requirements, you may need to adjust
+the CSS in styles.css:
+
+    .logo-img {
+        height: 60px;
+        width: auto;
+    }
+
+The logo image from screenshot 7 shows colorful figures in motion with the text
+"COMMUNITY REFORM CIC" and "EST. 2022". This design will work perfectly with
+the natural color palette used throughout the site.
+
+Current Status: LOGO NOT YET PLACED
+Please add your logo file to this directory to complete the website setup.
+

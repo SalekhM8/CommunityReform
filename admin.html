@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - Community Reform CIC</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .admin-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-teal) 100%);
+            padding: 20px;
+        }
+
+        .admin-box {
+            background-color: white;
+            padding: 60px;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .admin-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .admin-header img {
+            height: 80px;
+            width: auto;
+            margin-bottom: 20px;
+        }
+
+        .admin-header h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--neutral-900);
+            margin-bottom: 10px;
+        }
+
+        .admin-header p {
+            color: var(--neutral-600);
+        }
+
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .back-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .back-link a {
+            color: var(--primary-orange);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link a:hover {
+            color: var(--primary-teal);
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert.error {
+            display: block;
+            background-color: #FEE2E2;
+            color: #991B1B;
+            border: 1px solid #FCA5A5;
+        }
+
+        .alert.success {
+            display: block;
+            background-color: #D1FAE5;
+            color: #065F46;
+            border: 1px solid #6EE7B7;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-box">
+            <div class="admin-header">
+                <img src="assets/logo.png" alt="Community Reform CIC">
+                <h1>Admin Login</h1>
+                <p>Access the admin dashboard</p>
+            </div>
+
+            <div id="alertMessage" class="alert"></div>
+
+            <form id="adminLoginForm" class="admin-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required autocomplete="current-password">
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-full">Login</button>
+            </form>
+
+            <div class="back-link">
+                <a href="/">← Back to Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('adminLoginForm');
+        const alertMessage = document.getElementById('alertMessage');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Disable submit button
+            const submitButton = loginForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Logging in...';
+
+            // Simulate authentication (In production, this would call a backend API)
+            await new Promise(resolve => setTimeout(resolve, 1000));
+
+            // For demo purposes - in production, implement proper authentication
+            if (username && password) {
+                // Simulate successful login
+                showAlert('Login successful! Redirecting to dashboard...', 'success');
+                
+                setTimeout(() => {
+                    // In production, redirect to actual dashboard
+                    window.location.href = 'dashboard.html';
+                }, 1500);
+            } else {
+                showAlert('Invalid username or password. Please try again.', 'error');
+                submitButton.disabled = false;
+                submitButton.textContent = 'Login';
+            }
+
+            console.log('Login attempt:', { username });
+        });
+
+        function showAlert(message, type) {
+            alertMessage.textContent = message;
+            alertMessage.className = `alert ${type}`;
+        }
+    </script>
+</body>
+</html>
+
