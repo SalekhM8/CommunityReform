@@ -1107,6 +1107,31 @@ body {
     line-height: 1.8;
 }
 
+.timeline-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.timeline-content li {
+    padding-left: 24px;
+    position: relative;
+    color: var(--neutral-700);
+    line-height: 1.6;
+}
+
+.timeline-content li::before {
+    content: '•';
+    position: absolute;
+    left: 8px;
+    color: var(--primary-orange);
+    font-size: 1.4rem;
+    line-height: 1;
+    top: -2px;
+}
+
 /* ===================================
    WhatsApp Floating Button
    =================================== */
@@ -1258,6 +1283,12 @@ body {
     color: var(--neutral-600);
     font-size: 1.05rem;
     margin-bottom: 20px;
+}
+
+.contact-phone {
+    margin-top: -12px;
+    font-weight: 600;
+    color: var(--neutral-700);
 }
 
 .contact-card .btn {
