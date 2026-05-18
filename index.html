@@ -6,9 +6,10 @@
     <meta name="description" content="Community Reform CIC - Empowering local communities through active programmes, youth clubs, education, and support services.">
     <title>Community Reform CIC - Building Stronger Communities</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -40,45 +41,47 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
+                    <p class="hero-eyebrow">Community Reform CIC</p>
                     <h1 class="hero-title">
-                        Building <span class="highlight">stronger</span> communities through <span class="highlight">empowerment</span> and <span class="highlight">engagement</span>
+                        Building <em class="highlight">stronger</em> communities through empowerment and engagement
                     </h1>
                     <p class="hero-description">
-                        Community Reform CIC enables and empowers local people through active programmes, 
+                        Enabling and empowering local people through active programmes, 
                         youth development, education, and vital community support services.
                     </p>
                     <div class="hero-buttons">
-                        <a href="#programmes" class="btn btn-teal">Explore Programmes</a>
+                        <a href="#programmes" class="btn btn-primary">Explore Programmes</a>
                         <a href="#contact" class="btn btn-secondary">Get Involved</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <div class="hero-image-placeholder">
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&h=800&fit=crop&q=80" alt="Community engagement" class="hero-img">
                     </div>
+                    <div class="hero-shape hero-shape-1"></div>
+                    <div class="hero-shape hero-shape-2"></div>
                 </div>
             </div>
         </div>
-        <div class="hero-wave"></div>
     </section>
 
     <!-- Stats Section -->
     <section class="stats-section">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-card" data-target="500">
+                <div class="stat-card fade-in-section" data-target="1500">
                     <div class="stat-number">0</div>
                     <div class="stat-label">People Supported</div>
                 </div>
-                <div class="stat-card" data-target="15">
+                <div class="stat-card fade-in-section" data-target="10">
                     <div class="stat-number">0</div>
                     <div class="stat-label">Weekly Sessions</div>
                 </div>
-                <div class="stat-card" data-target="5">
+                <div class="stat-card fade-in-section" data-target="10">
                     <div class="stat-number">0</div>
                     <div class="stat-label">Core Programmes</div>
                 </div>
-                <div class="stat-card" data-target="100">
+                <div class="stat-card fade-in-section" data-target="100">
                     <div class="stat-number">0</div>
                     <div class="stat-label">Youth Members</div>
                 </div>
@@ -86,7 +89,7 @@
         </div>
     </section>
 
-    <!-- Programmes Overview -->
+    <!-- Programmes Section -->
     <section id="programmes" class="programmes-section">
         <div class="container">
             <div class="section-header">
@@ -94,251 +97,291 @@
                 <p class="section-subtitle">Comprehensive services designed to support, educate, and empower our community</p>
             </div>
 
-            <!-- All 5 Programmes Grid -->
-            <div class="programmes-grid">
-                <!-- Programme 1: Get Active -->
-                <div class="programme-card fade-in-section" data-color="orange">
-                    <div class="card-header">
-                        <div class="card-icon-large">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-                            </svg>
-                        </div>
+            <div class="programmes-tabs">
+                <button class="tab-btn active" data-tab="get-active" data-color="orange">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        </svg>
+                    </span>
+                    <span class="tab-label">Get Active</span>
+                </button>
+                <button class="tab-btn" data-tab="community-centre" data-color="teal">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            <polyline points="9 22 9 12 15 12 15 22"/>
+                        </svg>
+                    </span>
+                    <span class="tab-label">Community Centre</span>
+                </button>
+                <button class="tab-btn" data-tab="youth-clubs" data-color="blue">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </span>
+                    <span class="tab-label">Youth Clubs</span>
+                </button>
+                <button class="tab-btn" data-tab="training-education" data-color="pink">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                        </svg>
+                    </span>
+                    <span class="tab-label">Training & Education</span>
+                </button>
+                <button class="tab-btn" data-tab="advice-guidance" data-color="green">
+                    <span class="tab-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                    </span>
+                    <span class="tab-label">Advice & Guidance</span>
+                </button>
+            </div>
+
+            <div class="programmes-panels">
+                <!-- Get Active Panel -->
+                <div class="tab-panel active" id="get-active" data-color="orange">
+                    <div class="panel-header">
                         <h3>Get Active</h3>
+                        <p>Programmes that enable and empower local people to get active</p>
                     </div>
-                    <p class="card-description">Programmes that enable and empower local people to get active.</p>
-                    <div class="card-content">
-                        <div class="highlight-box">
-                            <h4>Women's Boxing Club</h4>
-                            <span class="badge">In collaboration with WBC</span>
-                        </div>
-                        <div class="content-section">
-                            <h5>Standard Operations</h5>
-                            <ul>
-                                <li>3× group sessions per week</li>
-                                <li>Ages 13+ • Female only</li>
-                                <li>Boxing self-defence & sparring</li>
-                            </ul>
-                        </div>
-                        <div class="content-section">
-                            <h5>Personal Training</h5>
-                            <ul>
-                                <li>Ages 10+ • Fitness and Boxing</li>
-                                <li>Boxercise qualified & Level 3 PT</li>
-                                <li>Therapy sessions (Level 3 counselling)</li>
-                            </ul>
+                    <div class="panel-layout">
+                        <div class="panel-main">
+                            <div class="panel-section">
+                                <p>Our Fitness With Champions programme delivers inclusive open-access sports and wellbeing sessions for young people aged 8–18, creating positive spaces where participants can stay active, build confidence, improve wellbeing, and develop healthy routines.</p>
+                            </div>
+                            <div class="panel-section">
+                                <h4>School Partnerships</h4>
+                                <p>We deliver structured boxing and wellbeing sessions in partnership with local Ark schools across Birmingham, providing young people with safe, engaging, and positive opportunities to improve both physical and mental wellbeing. Our sessions are designed to build confidence, discipline, resilience, teamwork, and healthy routines through sport and positive mentorship. We also deliver inclusive provision for SEND (Special Educational Needs and Disabilities) students, ensuring activities are accessible, supportive, and tailored to varying needs and abilities within a safe and supervised environment.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Programme 2: Community Centre -->
-                <div class="programme-card fade-in-section" data-color="teal">
-                    <div class="card-header">
-                        <div class="card-icon-large">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                                <polyline points="9 22 9 12 15 12 15 22"/>
-                            </svg>
-                        </div>
+                <!-- Community Centre Panel -->
+                <div class="tab-panel" id="community-centre" data-color="teal">
+                    <div class="panel-header">
                         <h3>Community Centre</h3>
+                        <p>A welcoming space for everyone in our community</p>
                     </div>
-                    <p class="card-description">A welcoming space for everyone in our community.</p>
-                    <div class="card-content">
-                        <ul class="feature-list">
-                            <li>
-                                <strong>Warm Hubs</strong>
-                                <span>Keep warm and share food with our community</span>
-                            </li>
-                            <li>
-                                <strong>Food Bank Support</strong>
-                                <span>In collaboration with Birmingham City Council</span>
-                            </li>
-                            <li>
-                                <strong>Celebrations</strong>
-                                <span>Affordable venue for community events</span>
-                            </li>
-                            <li>
-                                <strong>Social Groups</strong>
-                                <span>Connect with neighbors</span>
-                            </li>
-                            <li>
-                                <strong>Elderly Support</strong>
-                                <span>Dedicated social clubs for seniors</span>
-                            </li>
-                        </ul>
+                    <div class="panel-layout">
+                        <div class="panel-main">
+                            <div class="panel-section">
+                                <p>Our community centre provides a safe, inclusive, and welcoming environment designed to support individuals, families, and young people through a wide range of community-led activities, wellbeing programmes, educational support services, and social engagement opportunities. The centre acts as a hub for positive community development, bringing people together through accessible services that promote inclusion, health and wellbeing, personal growth, and stronger community connections.</p>
+                                <p>Through partnerships, outreach initiatives, youth activities, mentoring programmes, training opportunities, and wellbeing-focused sessions, we aim to create meaningful opportunities for individuals of all backgrounds to engage, develop confidence, access support, and build positive relationships within their local community. Our provision is focused on early intervention, community cohesion, reducing isolation, and creating safe spaces where people feel supported, valued, and empowered.</p>
+                            </div>
+                        </div>
+                        <div class="panel-sidebar">
+                            <h4>What We Offer</h4>
+                            <ul class="panel-list">
+                                <li>Safe &amp; Inclusive Community Space</li>
+                                <li>Youth Activities &amp; Open Sessions</li>
+                                <li>Health &amp; Wellbeing Programmes</li>
+                                <li>Education &amp; Training Support</li>
+                                <li>Family &amp; Community Engagement</li>
+                                <li>SEND Inclusive Provision</li>
+                                <li>Mentoring &amp; Personal Development</li>
+                                <li>Community Outreach Initiatives</li>
+                                <li>Sports, Fitness &amp; Recreational Activities</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Programme 3: Youth Clubs -->
-                <div class="programme-card fade-in-section" data-color="blue">
-                    <div class="card-header">
-                        <div class="card-icon-large">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-                                <circle cx="9" cy="7" r="4"/>
-                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-                                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-                            </svg>
-                        </div>
+                <!-- Youth Clubs Panel -->
+                <div class="tab-panel" id="youth-clubs" data-color="blue">
+                    <div class="panel-header">
                         <h3>Youth Clubs</h3>
+                        <p>Safe, engaging spaces for young people to thrive</p>
                     </div>
-                    <p class="card-description">Safe, engaging spaces for young people to thrive.</p>
-                    <div class="card-content">
-                        <ul class="feature-list">
-                            <li>
-                                <strong>Open Access Youth Clubs</strong>
-                                <span>Separate clubs for boys and girls</span>
-                            </li>
-                            <li>
-                                <strong>Specialist Youth Clubs</strong>
-                                <span>STEM programmes and more</span>
-                            </li>
-                            <li>
-                                <strong>Personal Development</strong>
-                                <span>Mentorship with professional experts</span>
-                            </li>
-                            <li>
-                                <strong>Targeted Support</strong>
-                                <span>Specialist programmes for at-risk youth</span>
-                            </li>
-                        </ul>
+                    <div class="panel-layout">
+                        <div class="panel-main">
+                            <div class="panel-section">
+                                <p>Our youth clubs provide safe, inclusive, and engaging spaces where young people can socialise, stay active, develop confidence, and build positive relationships within their community. Through structured open-access sessions, we deliver a wide range of activities focused on youth engagement, health and wellbeing, personal development, and early intervention support. Our programmes are designed to create positive opportunities for young people through sport, mentoring, group activities, creative sessions, and community-based learning, helping to reduce social isolation, encourage healthier lifestyles, improve confidence, and support emotional wellbeing.</p>
+                            </div>
+                        </div>
+                        <div class="panel-sidebar">
+                            <h4>Key Features</h4>
+                            <ul class="panel-list">
+                                <li>Open-Access Youth Sessions</li>
+                                <li>Health &amp; Wellbeing Activities</li>
+                                <li>Sports, Fitness &amp; Recreation</li>
+                                <li>Mentoring &amp; Positive Role Models</li>
+                                <li>SEND Inclusive Provision</li>
+                                <li>Youth Leadership &amp; Personal Development</li>
+                                <li>Community Engagement Activities</li>
+                                <li>Safe &amp; Supervised Spaces</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Programme 4: Training & Education -->
-                <div class="programme-card fade-in-section" data-color="pink">
-                    <div class="card-header">
-                        <div class="card-icon-large">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                            </svg>
-                        </div>
-                        <h3>Training & Education</h3>
+                <!-- Training & Education Panel -->
+                <div class="tab-panel" id="training-education" data-color="pink">
+                    <div class="panel-header">
+                        <h3>Training &amp; Education</h3>
+                        <p>Building skills and knowledge for a brighter future</p>
                     </div>
-                    <p class="card-description">Building skills and knowledge for a brighter future.</p>
-                    <div class="card-content">
-                        <ul class="feature-list">
-                            <li>
-                                <strong>Community Based Learning</strong>
-                                <span>Locally accessible education</span>
-                            </li>
-                            <li>
-                                <strong>English Lessons</strong>
-                                <span>Language groups and support</span>
-                            </li>
-                            <li>
-                                <strong>Key Skills</strong>
-                                <span>Maths and English fundamentals</span>
-                            </li>
-                            <li>
-                                <strong>Homework Clubs</strong>
-                                <span>Academic support for students</span>
-                            </li>
-                            <li>
-                                <strong>Arts & Media Training</strong>
-                                <span>Creative skills development</span>
-                            </li>
-                        </ul>
+                    <div class="panel-layout">
+                        <div class="panel-main">
+                            <div class="panel-section">
+                                <p>Our Training &amp; Education programmes are designed to support children and young people through structured learning, mentoring, and personal development within a safe and professionally managed environment. As an Ofsted-registered provider, we deliver a range of educational and enrichment activities that promote confidence, consistency, wellbeing, and positive development.</p>
+                            </div>
+                        </div>
+                        <div class="panel-sidebar">
+                            <h4>Our Programmes</h4>
+                            <ul class="panel-list">
+                                <li>Ofsted Registered Provision</li>
+                                <li>Homework &amp; Study Support Clubs</li>
+                                <li>After-School Learning Programmes</li>
+                                <li>SEND Educational Support</li>
+                                <li>Mentoring &amp; Personal Development</li>
+                                <li>English &amp; Key Skills Development</li>
+                                <li>Digital, Arts &amp; Media Training</li>
+                                <li>Youth Leadership &amp; Life Skills</li>
+                                <li>Holiday &amp; Enrichment Activities</li>
+                                <li>Community-Based Learning &amp; Engagement</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Programme 5: Information, Advice & Guidance -->
-                <div class="programme-card fade-in-section" data-color="green">
-                    <div class="card-header">
-                        <div class="card-icon-large">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <path d="M12 16v-4"/>
-                                <path d="M12 8h.01"/>
-                            </svg>
-                        </div>
-                        <h3>Information, Advice & Guidance</h3>
+                <!-- Information, Advice & Guidance Panel -->
+                <div class="tab-panel" id="advice-guidance" data-color="green">
+                    <div class="panel-header">
+                        <h3>Information, Advice &amp; Guidance</h3>
+                        <p>Expert support when you need it most</p>
                     </div>
-                    <p class="card-description">Expert support when you need it most.</p>
-                    <div class="card-content">
-                        <ul class="feature-list">
-                            <li>
-                                <strong>Trusted Partnership</strong>
-                                <span>Working with BVSC</span>
-                            </li>
-                            <li>
-                                <strong>Household Support Fund</strong>
-                                <span>Official partner providing financial assistance</span>
-                            </li>
-                            <li>
-                                <strong>Housing Partnership</strong>
-                                <span>With Refugee and Migrant Centre (RMC)</span>
-                            </li>
-                            <li>
-                                <strong>Translation Services</strong>
-                                <span>Arabic to English document translation</span>
-                            </li>
-                        </ul>
+                    <div class="panel-layout">
+                        <div class="panel-main">
+                            <div class="panel-section">
+                                <p>Our Information, Advice &amp; Guidance services are designed to support individuals, young people, and families by providing accessible guidance, signposting, and community-based support in a safe and welcoming environment. We work closely with local residents and partner organisations to help individuals access opportunities, improve wellbeing, overcome barriers, and make informed decisions regarding education, employment, training, health, and personal development.</p>
+                                <p>Through early intervention, mentoring, and tailored support, we aim to empower communities, reduce isolation, promote inclusion, and improve long-term outcomes for those who may require additional guidance or support. Our approach focuses on building confidence, encouraging positive engagement, and connecting individuals with the services and opportunities available to them.</p>
+                            </div>
+                        </div>
+                        <div class="panel-sidebar">
+                            <h4>Support Areas</h4>
+                            <ul class="panel-list">
+                                <li>Education, Training &amp; Employment Guidance</li>
+                                <li>Youth Mentoring &amp; Support</li>
+                                <li>Community Signposting Services</li>
+                                <li>Health &amp; Wellbeing Support</li>
+                                <li>Family &amp; Parent Guidance</li>
+                                <li>SEND &amp; Inclusive Support</li>
+                                <li>Confidence &amp; Personal Development</li>
+                                <li>Early Intervention &amp; Engagement Support</li>
+                                <li>Community Outreach &amp; Engagement</li>
+                                <li>Safe, Accessible &amp; Inclusive Support Services</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Impact Timeline -->
-    <section id="about" class="timeline-section">
+    <!-- Our Impact -->
+    <section id="about" class="impact-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Our Journey of Impact</h2>
-                <p class="section-subtitle">Building stronger communities since 2022</p>
+                <h2 class="section-title">Our Impact</h2>
+                <p class="section-subtitle">Community Reform CIC has worked alongside local organisations, councils, and community partners to deliver projects that support young people, strengthen families, and improve wellbeing across the community.</p>
             </div>
 
-            <div class="timeline">
-                <div class="timeline-item fade-in-section">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2022</div>
-                        <h3>Foundations and Collaboration</h3>
-                        <ul>
-                            <li>Established a Community Centre as a welcoming hub for local residents, offering support, activities, and essential services</li>
-                            <li>Launched Youth Clubs for boys and girls, providing safe, inclusive spaces for personal growth, teamwork, and confidence</li>
-                            <li>Partnered with National Youth Agency (NYA), leading a consortium of 150 online organisations and 10+ face-to-face community partners</li>
-                            <li>Partnered with Birmingham City Council to deliver Warm Spaces, offering comfort and support during winter months</li>
-                        </ul>
+            <div class="impact-content">
+                <p class="impact-intro">Our work focuses on creating safe spaces, supporting those facing hardship, and giving young people positive opportunities through sport, mentoring, education, and community engagement.</p>
+            </div>
+
+            <div class="impact-grid">
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4505.jpeg" alt="BVSC" class="impact-logo">
+                        <div>
+                            <h3>Household Support Fund</h3>
+                            <p class="impact-partner">In Partnership With BVSC</p>
+                        </div>
                     </div>
+                    <p>Through the Household Support Fund programme, Community Reform CIC helped distribute over <strong>£213,800</strong> in support to households facing financial hardship over several months.</p>
+                    <p>The support helped local families with essentials including food, utility bills, clothing, and other day-to-day necessities during a particularly difficult period for many households.</p>
                 </div>
 
-                <div class="timeline-item fade-in-section">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023</div>
-                        <h3>Innovation, Health, and Empowerment</h3>
-                        <ul>
-                            <li>Delivered Premier League STEM Programme in partnership with National Grid, inspiring young people in science, technology, engineering, and mathematics</li>
-                            <li>Collaborated with Women's Boxing Club in Birmingham, promoting physical wellbeing, mental health support, confidence, and empowerment through sport</li>
-                            <li>Began working in schools, delivering physical activity and mental health support programmes to promote wellbeing, resilience, and healthy lifestyles</li>
-                        </ul>
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4504.jpeg" alt="Birmingham City Council" class="impact-logo">
+                        <div>
+                            <h3>Warm Welcome Space</h3>
+                            <p class="impact-partner">Supported By Birmingham City Council</p>
+                        </div>
                     </div>
+                    <p>Through the Warm Welcome Space initiative, we provided a safe and welcoming environment for members of the local community during periods of increased financial pressure and social isolation.</p>
+                    <p>The project gave people access to a warm space, community support, and opportunities to connect with others within a positive environment.</p>
                 </div>
 
-                <div class="timeline-item fade-in-section">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2024</div>
-                        <h3>Expanding Trust, Inclusion, and Reach</h3>
-                        <ul>
-                            <li>Became a Trusted Partner of the Refugee and Migrant Centre (RMC), strengthening our work with diverse communities</li>
-                            <li>Continued school engagement, successfully delivering programmes in 7+ schools, providing physical development and mental health workshops</li>
-                        </ul>
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4500.jpeg" alt="National Youth Agency" class="impact-logo">
+                        <div>
+                            <h3>Youth Engagement &amp; Financial Mentorship</h3>
+                            <p class="impact-partner">Supported Through National Youth Agency Programmes</p>
+                        </div>
                     </div>
+                    <p>Over a two-year period, Community Reform CIC worked with more than <strong>320 young people in person</strong> and supported a further <strong>450+ online</strong> through a combination of sports, mentoring, and youth engagement activities.</p>
+                    <p>The programme included football, basketball, boxing, fitness, and structured youth sessions, giving young people a safe environment to stay active, build confidence, and spend time around positive influences.</p>
+                    <p>Alongside the sports activities, we also delivered financial awareness and career-focused mentoring, helping young people better understand future opportunities, money management, decision-making, and different career pathways available to them.</p>
+                    <p>The project was centred around keeping young people engaged, supported, and connected to positive opportunities within the community.</p>
                 </div>
 
-                <div class="timeline-item fade-in-section">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2025</div>
-                        <h3>Growth, Recognition, and Wider Impact</h3>
-                        <ul>
-                            <li>Formed a Trusted Partnership with BVSC, reinforcing our role as a leading community organisation</li>
-                            <li>Expanded our school programmes, reaching 12+ schools and integrating physical activity, mental health support, and enrichment initiatives</li>
-                        </ul>
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4501.gif" alt="National Grid" class="impact-logo">
+                        <div>
+                            <h3>Community Partnership Work</h3>
+                            <p class="impact-partner">In Partnership With National Grid</p>
+                        </div>
                     </div>
+                    <p>Community Reform CIC has also worked alongside National Grid on community-focused initiatives designed to support local residents, strengthen engagement, and improve well-being within the community.</p>
+                </div>
+
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4503.jpeg" alt="Better Youth Spaces" class="impact-logo">
+                        <div>
+                            <h3>Better Youth Spaces Funding</h3>
+                        </div>
+                    </div>
+                    <p>Community Reform CIC successfully secured funding through the Better Youth Spaces initiative to support the development of improved youth and fitness facilities.</p>
+                    <p>The funding has helped us continue building safer and more positive spaces where young people can stay active, improve wellbeing, and access opportunities that support both physical and mental health.</p>
+                </div>
+
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4499.jpeg" alt="Ofsted" class="impact-logo">
+                        <div>
+                            <h3>Ofsted Registered Youth Provision</h3>
+                        </div>
+                    </div>
+                    <p>Community Reform CIC continues to develop structured provision for young people aged <strong>8–18</strong>, combining education, mentoring, wellbeing activities, fitness, and mixed martial arts in a safe, professionally supervised environment.</p>
+                    <p>We aim to create positive spaces where young people can build confidence, discipline, resilience, and healthier routines while being supported both personally and socially.</p>
+                    <p><strong>Registration Number: 2868906</strong></p>
+                </div>
+
+                <div class="impact-card fade-in-section">
+                    <div class="impact-card-header">
+                        <img src="assets/uniform_logos_4k/IMG_4502.jpeg" alt="UK Government Funded" class="impact-logo">
+                        <div>
+                            <h3>UK Government Funded</h3>
+                        </div>
+                    </div>
+                    <p>Supported by UK Government funding to deliver community services and support to those who need it most.</p>
                 </div>
             </div>
         </div>
@@ -376,11 +419,11 @@
                         <h3>Follow Us</h3>
                         <p>Connect on social media</p>
                         <div class="social-links">
-                            <a href="https://instagram.com/communityreform_cic" target="_blank" class="social-link">
+                            <a href="https://instagram.com/communityreformcic" target="_blank" class="social-link">
                                 <svg viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                                 </svg>
-                                <span>@communityreform_cic</span>
+                                <span>@communityreformcic</span>
                             </a>
                         </div>
                     </div>
@@ -440,4 +483,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

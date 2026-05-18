@@ -151,6 +151,40 @@ navLinksItems.forEach(link => {
 });
 
 // ===================================
+// Programmes Tab Switching
+// ===================================
+
+const tabButtons = document.querySelectorAll('.tab-btn');
+const tabPanels = document.querySelectorAll('.tab-panel');
+
+function switchTab(targetTab) {
+    // Remove active class from all buttons and panels
+    tabButtons.forEach(btn => {
+        btn.classList.remove('active');
+    });
+    tabPanels.forEach(panel => {
+        panel.classList.remove('active');
+    });
+    
+    // Add active class to target button and panel
+    const targetBtn = document.querySelector(`.tab-btn[data-tab="${targetTab}"]`);
+    const targetPanel = document.getElementById(targetTab);
+    
+    if (targetBtn && targetPanel) {
+        targetBtn.classList.add('active');
+        targetPanel.classList.add('active');
+    }
+}
+
+// Add click event listeners to tab buttons
+tabButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const targetTab = button.getAttribute('data-tab');
+        switchTab(targetTab);
+    });
+});
+
+// ===================================
 // Navbar Scroll Effect
 // ===================================
 
@@ -161,11 +195,11 @@ window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
     if (currentScroll > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.85)';
-        navbar.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.2)';
+        navbar.style.background = 'rgba(253, 251, 247, 0.95)';
+        navbar.style.boxShadow = '0 4px 20px rgba(45, 41, 36, 0.08)';
     } else {
-        navbar.style.background = 'rgba(255, 255, 255, 0.75)';
-        navbar.style.boxShadow = '0 8px 32px 0 rgba(31, 38, 135, 0.15)';
+        navbar.style.background = 'rgba(253, 251, 247, 0.92)';
+        navbar.style.boxShadow = 'none';
     }
     
     lastScroll = currentScroll;
