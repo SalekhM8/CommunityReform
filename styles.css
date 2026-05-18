@@ -950,6 +950,13 @@ body {
     max-width: 320px;
 }
 
+.footer-ofsted {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
 .footer-links {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function animateCounter(element, target, duration = 2000) {
     const start = 0;
-    const increment = target / (duration / 16); // 60fps
+    const increment = target / (duration / 16);
     let current = start;
     
     const timer = setInterval(() => {
         current += increment;
         if (current >= target) {
-            element.textContent = Math.floor(target);
+            element.textContent = Math.floor(target) + '+';
             clearInterval(timer);
         } else {
-            element.textContent = Math.floor(current);
+            element.textContent = Math.floor(current) + '+';
         }
     }, 16);
 }
