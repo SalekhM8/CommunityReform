@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Childcare eligibility and enquiry form for parents and carers - Community Reform CIC Zawia Masjid childcare programme. Check eligibility for funded childcare and book an appointment.">
+    <title>Childcare Enquiry - Community Reform CIC</title>
+    <!-- Bump ?v= whenever styles.css or enquiry.js change, so visitors pick up the new files -->
+    <link rel="stylesheet" href="styles.css?v=20261019b">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+</head>
+<body class="enquiry-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <a href="index.html" aria-label="Community Reform CIC home">
+                        <img src="assets/logo.png" alt="Community Reform CIC" class="logo-img">
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <button class="mobile-menu-close" aria-label="Close menu"></button>
+                    <a href="index.html#home">Home</a>
+                    <a href="index.html#programmes">Programmes</a>
+                    <a href="index.html#about">Our Impact</a>
+                    <a href="childcare-enquiry.html" aria-current="page">Childcare Enquiry</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-menu-overlay"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="enq-hero">
+        <div class="container">
+            <p class="hero-eyebrow">Zawia Masjid Childcare Programme</p>
+            <h1 class="enq-title">Childcare Eligibility &amp; Enquiry</h1>
+            <p class="enq-intro">
+                A simple form for parents and carers to enquire about childcare support through
+                Community Reform CIC. Tell us about your family and choose a time that suits you
+                for a free, no-obligation chat with our team.
+            </p>
+            <ul class="enq-hero-points">
+                <li>Check your eligibility for funded childcare</li>
+                <li>Get help finding the right childcare</li>
+                <li>Free appointment, no documents needed</li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Form -->
+    <section class="enq-section">
+        <div class="container enq-layout">
+
+            <!-- Main form column -->
+            <div class="enq-main">
+
+                <form id="childcareForm" class="enq-card" novalidate autocomplete="on">
+                    <div class="enq-form-heading">
+                        <h2>Enquiry Form</h2>
+                        <p>Fields marked <span class="req" aria-hidden="true">*</span> are required. It takes about 5 minutes.</p>
+                    </div>
+
+                    <!-- ===================== 1. Parent / Carer ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">1</span>
+                            Parent / Carer Details
+                        </legend>
+                        <p class="enq-hint">So we know who to contact about your enquiry.</p>
+
+                        <div class="enq-grid">
+                            <div class="enq-field span-2">
+                                <label for="fullName">Full Name <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="fullName" name="fullName" required
+                                       autocomplete="name" placeholder="e.g. Amina Khan">
+                                <span class="enq-error-msg" data-error-for="fullName"></span>
+                            </div>
+
+                            <div class="enq-field">
+                                <label for="phone">Phone Number <span class="req" aria-hidden="true">*</span></label>
+                                <input type="tel" id="phone" name="phone" required
+                                       autocomplete="tel" inputmode="tel" placeholder="e.g. 07123 456 789">
+                                <span class="enq-error-msg" data-error-for="phone"></span>
+                            </div>
+
+                            <div class="enq-field">
+                                <label for="email">Email Address <span class="req" aria-hidden="true">*</span></label>
+                                <input type="email" id="email" name="email" required
+                                       autocomplete="email" inputmode="email" placeholder="e.g. amina@example.com">
+                                <span class="enq-error-msg" data-error-for="email"></span>
+                            </div>
+
+                            <div class="enq-field span-2">
+                                <label for="address">Home Address <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="address" name="address" required
+                                       autocomplete="street-address" placeholder="House number and street name">
+                                <span class="enq-error-msg" data-error-for="address"></span>
+                            </div>
+
+                            <div class="enq-field">
+                                <label for="postcode">Postcode <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="postcode" name="postcode" required
+                                       autocomplete="postal-code" placeholder="e.g. B5 7PH"
+                                       style="text-transform: uppercase;">
+                                <span class="enq-error-msg" data-error-for="postcode"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- ===================== 2. Children ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">2</span>
+                            Your Children
+                        </legend>
+                        <p class="enq-hint">This helps us work out what childcare support you may be entitled to.</p>
+
+                        <div class="enq-grid">
+                            <div class="enq-field">
+                                <label for="childCount">How many children do you have? <span class="req" aria-hidden="true">*</span></label>
+                                <select id="childCount" name="childCount" required>
+                                    <option value="">Please select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6+">6+</option>
+                                </select>
+                                <span class="enq-error-msg" data-error-for="childCount"></span>
+                            </div>
+                        </div>
+
+                        <div id="childAges" class="enq-grid enq-child-ages" aria-live="polite"></div>
+                        <p id="childAgesNote" class="enq-hint enq-child-ages-note" hidden>
+                            If you have more than 6 children, please add their ages in the notes box at the end of the form.
+                        </p>
+                    </fieldset>
+
+                    <!-- ===================== 3. Employment ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">3</span>
+                            Employment Status
+                        </legend>
+                        <p class="enq-hint">Are you currently working?</p>
+
+                        <div class="enq-choice-list" role="radiogroup" aria-label="Are you currently working?">
+                            <label class="enq-choice">
+                                <input type="radio" name="employment" value="Yes - Full-time" required>
+                                <span>Yes &ndash; Full-time</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="employment" value="Yes - Part-time">
+                                <span>Yes &ndash; Part-time</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="employment" value="Yes - Self-employed">
+                                <span>Yes &ndash; Self-employed</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="employment" value="No - Not currently working">
+                                <span>No &ndash; Not currently working</span>
+                            </label>
+                        </div>
+                        <span class="enq-error-msg" data-error-for="employment"></span>
+                    </fieldset>
+
+                    <!-- ===================== 4. Benefits ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">4</span>
+                            Benefits &amp; Financial Support
+                        </legend>
+                        <p class="enq-hint">Do you currently receive any of the following? Select all that apply.</p>
+                        <p class="enq-hint enq-hint-quiet">
+                            We only need to know which ones &ndash; never your account details or logins.
+                        </p>
+
+                        <div class="enq-choice-list cols-2" role="group" aria-label="Benefits and financial support">
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Universal Credit (UC)">
+                                <span>Universal Credit (UC)</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Personal Independence Payment (PIP)">
+                                <span>Personal Independence Payment (PIP)</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Carer's Allowance">
+                                <span>Carer&rsquo;s Allowance</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Child Benefit">
+                                <span>Child Benefit</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Disability Living Allowance (DLA)">
+                                <span>Disability Living Allowance (DLA)</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Employment and Support Allowance (ESA)">
+                                <span>Employment and Support Allowance (ESA)</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Housing Benefit">
+                                <span>Housing Benefit</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" value="Income Support">
+                                <span>Income Support</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="checkbox" name="benefits" id="benefitOther" value="Other">
+                                <span>Other</span>
+                            </label>
+                            <label class="enq-choice enq-choice-strong">
+                                <input type="checkbox" name="benefits" id="benefitNone" value="None of the above">
+                                <span>None of the above</span>
+                            </label>
+                            <label class="enq-choice enq-choice-strong">
+                                <input type="checkbox" name="benefits" id="benefitUnsure" value="Not sure">
+                                <span>Not sure</span>
+                            </label>
+                        </div>
+
+                        <div class="enq-field enq-other-field" id="otherBenefitField" hidden>
+                            <label for="otherBenefit">Please tell us which other support you receive</label>
+                            <input type="text" id="otherBenefit" name="otherBenefit"
+                                   placeholder="e.g. Council Tax Reduction">
+                            <span class="enq-error-msg" data-error-for="otherBenefit"></span>
+                        </div>
+
+                        <span class="enq-error-msg" data-error-for="benefits"></span>
+                    </fieldset>
+
+                    <!-- ===================== 5. Childcare support ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">5</span>
+                            Childcare Support
+                        </legend>
+                        <p class="enq-hint">What do you need help with?</p>
+
+                        <div class="enq-choice-list" role="radiogroup" aria-label="What do you need help with?">
+                            <label class="enq-choice">
+                                <input type="radio" name="support" value="Checking eligibility for funded childcare" required>
+                                <span>Checking eligibility for funded childcare</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="support" value="Finding childcare">
+                                <span>Finding childcare</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="support" value="Both">
+                                <span>Both</span>
+                            </label>
+                            <label class="enq-choice">
+                                <input type="radio" name="support" value="Not sure - I need advice">
+                                <span>Not sure &ndash; I need advice</span>
+                            </label>
+                        </div>
+                        <span class="enq-error-msg" data-error-for="support"></span>
+                    </fieldset>
+
+                    <!-- ===================== 6. Appointment ===================== -->
+                    <fieldset class="enq-group">
+                        <legend class="enq-legend">
+                            <span class="enq-step">6</span>
+                            Preferred Appointment
+                        </legend>
+                        <p class="enq-hint">
+                            Choose a date and time that suits you. Only genuinely available times are shown,
+                            and your slot is reserved as soon as you submit.
+                        </p>
+
+                        <div id="bookingUnavailable" class="enq-notice" hidden>
+                            <strong>Online booking isn&rsquo;t switched on yet.</strong>
+                            Send us your details using the button below and we&rsquo;ll contact you to arrange a
+                            suitable time &ndash; or call us on
+                            <a href="tel:07359725058">07359 725 058</a>.
+                        </div>
+
+                        <div id="bookingFields" class="enq-grid">
+                            <div class="enq-field span-2 enq-date-field">
+                                <label id="apptDateLabel">Preferred Date <span class="req" aria-hidden="true">*</span></label>
+                                <div id="datePicker" class="enq-datepicker" role="group"
+                                     aria-labelledby="apptDateLabel" tabindex="-1">
+                                    <div class="enq-dp-head">
+                                        <button type="button" class="enq-dp-nav" id="dpPrev" aria-label="Previous month">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                <path d="M15 18l-6-6 6-6"/>
+                                            </svg>
+                                        </button>
+                                        <p class="enq-dp-month" id="dpMonth" aria-live="polite">Loading&hellip;</p>
+                                        <button type="button" class="enq-dp-nav" id="dpNext" aria-label="Next month">
+                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"
+                                                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                <path d="M9 6l6 6-6 6"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <div class="enq-dp-weekdays" aria-hidden="true">
+                                        <span>Mo</span><span>Tu</span><span>We</span><span>Th</span>
+                                        <span>Fr</span><span>Sa</span><span>Su</span>
+                                    </div>
+                                    <div class="enq-dp-grid" id="dpGrid"></div>
+                                    <div class="enq-dp-legend">
+                                        <span><i class="enq-dp-key" aria-hidden="true"></i>Available</span>
+                                        <span><i class="enq-dp-key is-unavailable" aria-hidden="true"></i>No appointments</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="apptDate" name="apptDate">
+                                <span class="enq-error-msg" data-error-for="apptDate"></span>
+                            </div>
+
+                            <div class="enq-field span-2 enq-time-field">
+                                <label for="apptTime">Preferred Time <span class="req" aria-hidden="true">*</span></label>
+                                <select id="apptTime" name="apptTime" required disabled>
+                                    <option value="">Choose a date first</option>
+                                </select>
+                                <span class="enq-error-msg" data-error-for="apptTime"></span>
+                            </div>
+                        </div>
+
+                        <p id="slotStatus" class="enq-slot-status" role="status" aria-live="polite"></p>
+
+                        <div class="enq-field span-2 enq-notes">
+                            <label for="notes">Anything else you&rsquo;d like us to know? <span class="enq-optional">(optional)</span></label>
+                            <textarea id="notes" name="notes" rows="3"
+                                      placeholder="For example: any additional children, preferred language, or accessibility needs."></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- ===================== 7. Consent ===================== -->
+                    <fieldset class="enq-group enq-group-last">
+                        <legend class="enq-legend">
+                            <span class="enq-step">7</span>
+                            Consent &amp; Submit
+                        </legend>
+
+                        <div id="consentField" class="enq-consent">
+                            <label class="enq-choice enq-choice-consent">
+                                <input type="checkbox" id="consent" name="consent" required>
+                                <span>
+                                    I have read the
+                                    <a href="privacy.html" target="_blank" rel="noopener">privacy notice</a>
+                                    and understand how my information will be used.
+                                    <span class="req" aria-hidden="true">*</span>
+                                </span>
+                            </label>
+                            <span class="enq-error-msg" data-error-for="consent"></span>
+                        </div>
+
+                        <!-- Simple spam trap: hidden from people, tempting to bots -->
+                        <div class="enq-honeypot" aria-hidden="true">
+                            <label for="website">Website</label>
+                            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div id="formMessage" class="enq-message" role="alert" hidden></div>
+
+                        <div class="enq-actions">
+                            <button type="submit" id="submitBtn" class="enq-submit-btn">Submit Enquiry</button>
+                            <p class="enq-actions-note">
+                                We&rsquo;ll email you a confirmation straight away. No documents or benefit
+                                account logins are needed.
+                            </p>
+                        </div>
+                    </fieldset>
+                </form>
+
+                <!-- ===================== Confirmation ===================== -->
+                <div id="enqSuccess" class="enq-success" hidden tabindex="-1">
+                    <div class="enq-success-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 6L9 17l-5-5"/>
+                        </svg>
+                    </div>
+                    <h2 class="enq-success-title">Thank you<span id="successName"></span> &ndash; your enquiry is booked</h2>
+                    <p class="enq-success-lead" id="successLead"></p>
+
+                    <dl class="enq-success-detail" id="successDetail"></dl>
+
+                    <div class="enq-success-next">
+                        <h3>What happens next</h3>
+                        <ol>
+                            <li>A confirmation email is on its way to you now &ndash; please check your spam folder if it doesn&rsquo;t arrive within 15 minutes.</li>
+                            <li>Our team at Community Reform CIC has been notified at <a href="mailto:info@crcic.co.uk">info@crcic.co.uk</a>.</li>
+                            <li>You&rsquo;ll automatically receive a reminder email the day before your appointment.</li>
+                            <li>If you need to change or cancel, use the links in your confirmation email, or call <a href="tel:07359725058">07359 725 058</a>.</li>
+                        </ol>
+                    </div>
+
+                    <div class="enq-success-actions">
+                        <a href="index.html" class="btn btn-outline-dark">Back to home</a>
+                        <a href="https://wa.me/447359725058" target="_blank" rel="noopener" class="btn btn-outline-dark">Message us on WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="enq-aside">
+                <div class="enq-aside-card">
+                    <h3>Appointment Hours</h3>
+                    <table class="enq-hours-table">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Monday &ndash; Thursday</th>
+                                <td>10:00am &ndash; 7:00pm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Friday</th>
+                                <td>10:00am &ndash; 12:30pm<br>2:30pm &ndash; 7:00pm</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Saturday &ndash; Sunday</th>
+                                <td class="enq-unavailable">Unavailable</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="enq-aside-note">Appointments are held at our centre: 294 Edward Road, Birmingham, B5 7PH.</p>
+                </div>
+
+                <div class="enq-aside-card">
+                    <h3>Need Help?</h3>
+                    <ul class="panel-list enq-aside-list">
+                        <li>Free, confidential advice</li>
+                        <li>No documents to upload</li>
+                        <li>No benefit account logins needed</li>
+                        <li>Interpretation can be arranged</li>
+                    </ul>
+                    <div class="enq-contact-links">
+                        <a href="tel:07359725058" class="enq-contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>07359 725 058</span>
+                        </a>
+                        <a href="mailto:info@crcic.co.uk" class="enq-contact-link">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <span>info@crcic.co.uk</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/logo.png" alt="Community Reform CIC" class="logo-img">
+                <p>Building stronger communities since 2022</p>
+                <p class="footer-ofsted">Ofsted Registered &bull; Reg. No. 2868906</p>
+            </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Our Programmes</h4>
+                        <a href="index.html#programmes">Get Active</a>
+                        <a href="index.html#programmes">Community Centre</a>
+                        <a href="index.html#programmes">Youth Clubs</a>
+                        <a href="index.html#programmes">Training & Education</a>
+                        <a href="index.html#programmes">Advice & Guidance</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <a href="index.html#contact">294 Edward Road, B5 7PH</a>
+                        <a href="mailto:info@crcic.co.uk">info@crcic.co.uk</a>
+                        <a href="tel:07359725058">07359 725 058</a>
+                        <a href="childcare-enquiry.html">Childcare Enquiry</a>
+                        <a href="privacy.html">Privacy Notice</a>
+                        <a href="https://instagram.com/communityreformcic" target="_blank">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Community Reform CIC. All rights reserved. EST. 2022</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/447359725058" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="script.js"></script>
+    <script src="enquiry.js?v=20261019b"></script>
+</body>
+</html>

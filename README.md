@@ -10,23 +10,26 @@ A modern, professional website for Community Reform CIC - Building stronger comm
 - ⚡ **High Performance**: Lightweight, fast-loading with optimized assets
 - 🎭 **Smooth Animations**: Scroll-triggered animations, counter animations, and parallax effects
 - 📋 **Contact Form**: Integrated form with validation for service inquiries
-- 🔐 **Admin Section**: Secure admin login and dashboard for content management
+- 🧾 **Childcare Enquiry Form**: Eligibility questions, live appointment slots and
+  automatic confirmations/reminders through Cal.com
 
 ## Structure
 
 ```
 CommunityReform/
-├── index.html          # Main landing page
-├── admin.html          # Admin login page
-├── dashboard.html      # Admin dashboard
-├── styles.css          # All styles and responsive design
-├── script.js           # JavaScript for animations and interactions
-├── assets/             # Images and logo
-│   ├── logo.jpeg       # Organization logo ✅
+├── index.html              # Main landing page
+├── childcare-enquiry.html  # Childcare eligibility & enquiry form
+├── privacy.html            # Privacy notice (linked from the form's consent box)
+├── enquiry.js              # Enquiry form logic + Cal.com booking integration
+├── CALCOM-SETUP.md         # Cal.com setup + what is already configured
+├── styles.css              # All styles and responsive design
+├── script.js               # JavaScript for animations and interactions
+├── assets/                 # Images and logo
+│   ├── logo.jpeg           # Organization logo ✅
 │   └── LOGO_INSTRUCTIONS.txt
-├── CIC Logo.jpeg       # Original logo file
-├── .gitignore          # Git ignore rules
-└── README.md           # This file
+├── CIC Logo.jpeg           # Original logo file
+├── .gitignore              # Git ignore rules
+└── README.md               # This file
 ```
 
 ## Setup
@@ -53,6 +56,38 @@ CommunityReform/
    - Upload all files to your web hosting service
    - Ensure proper file permissions (644 for files, 755 for directories)
    - Configure SSL certificate for HTTPS
+
+## Running this site locally
+
+The site is plain HTML/CSS/JS with no build step. To preview it on your own computer:
+
+```bash
+./serve.sh              # then open http://localhost:8080
+./serve.sh 3000         # or pick any other port
+```
+
+Or the long way round, from this folder:
+
+```bash
+python3 -m http.server 8080
+```
+
+Then open **http://localhost:8080/** for the home page, or
+**http://localhost:8080/childcare-enquiry.html** for the enquiry form.
+
+A few things worth knowing:
+
+- **Always use `http://localhost:…`, not `file://`.** The appointment calendar
+  talks to Cal.com, and browsers block those requests from pages opened by
+  double-clicking the file.
+- Stop the server with **Ctrl+C**.
+- When you change `styles.css` or `enquiry.js`, bump the `?v=` number on those
+  file names in the HTML (there is a reminder comment in
+  `childcare-enquiry.html`). That is what stops visitors — and you — seeing a
+  stale cached copy.
+- The enquiry form is already wired to the live Cal.com account, so a test
+  submission creates a **real** booking and sends real emails. Cancel test
+  bookings in Cal.com afterwards (see `CALCOM-SETUP.md`).
 
 ## Customization
 
@@ -115,9 +150,47 @@ To add or remove sections:
 - **Important**: Integrate with backend for actual form submission
 
 ### 6. Admin Section
-- Login page at `/admin.html`
-- Dashboard at `/dashboard.html`
-- **Important**: Implement proper authentication and backend integration
+- The earlier `admin.html` / `dashboard.html` pages were removed from the site
+- **Important**: if content management is needed again, build it with proper
+  authentication and a backend
+
+## Childcare Enquiry Form
+
+`childcare-enquiry.html` is the Zawia Masjid childcare eligibility and enquiry form. It is
+**fully automated with no backend to maintain** — the only third-party service is Cal.com,
+which is free for this use.
+
+What it does:
+
+- Parents and carers complete the enquiry form (parent details, children and ages,
+  employment, benefits, what help they need, consent) and pick an appointment.
+- Appointment times are pulled live from Cal.com, so **only genuinely free slots are shown**
+  and **double bookings are impossible**.
+- On submit, Cal.com automatically emails the parent a confirmation, notifies
+  `info@crcic.co.uk`, and sends a reminder to both the day before the appointment.
+- Staff manage bookings (accept, cancel, reschedule) in the Cal.com dashboard.
+- A privacy notice lives on its own page (`privacy.html`), and the consent checkbox
+  links to it (opening in a new tab so nobody loses their place in the form).
+
+**Status: switched on.** The form is already connected to the CIC's Cal.com account
+(`crcic` / `childcare-appointment`) and is taking real appointments. `CALCOM-SETUP.md`
+records the live configuration (opening hours, limits, booking questions, reminder
+workflows) and how to change it.
+
+To point the form at a different Cal.com account or event type, edit the `CALCOM`
+block at the top of `enquiry.js` (username + slug).
+
+If those two values are ever blank, the form still works: the appointment section
+explains that online booking isn't live and the submit button opens a pre-filled
+email to `info@crcic.co.uk`.
+
+### Notes on the free setup
+
+- Email wording is Cal.com's default template on the free plan (custom text and SMS
+  reminders need their paid Teams plan, around $12–16 per user/month).
+- Booking data is processed by Cal.com in the US, under their DPA and the UK Extension to
+  the EU–US Data Privacy Framework. This is explained to parents in the privacy notice.
+- No documents, bank details or benefit account logins are ever collected.
 
 ## Form Integration
 
